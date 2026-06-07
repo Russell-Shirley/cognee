@@ -128,3 +128,16 @@ MCP server and Frontend:
 ## CI Mirrors Local Commands
 
 Our GitHub Actions run the same ruff checks and pytest suites shown above (`.github/workflows/basic_tests.yml` and related workflows). Use the commands in this document locally to minimize CI surprises.
+
+## CodeGraph — Code Navigation
+
+CodeGraph MCP is wired globally into Claude Code on this machine — every session has all 10 `codegraph_*` tools automatically, no per-repo config. **Prefer CodeGraph over Explore agents and multi-file Glob/Grep chains for code navigation:**
+
+| Instead of… | Use… |
+|---|---|
+| Spawning an Explore agent to find a symbol | `codegraph_search` |
+| Glob + Grep to trace call chains | `codegraph_callers` / `codegraph_callees` |
+| Reading multiple files for context | `codegraph_context` |
+| Guessing what a change might break | `codegraph_impact` |
+
+Run `codegraph_status` at session start if unsure the index is current. This repo (`cognee-fork`) is indexed. Full guidance in `ai-factory/AGENTS.md`.
