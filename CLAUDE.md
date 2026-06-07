@@ -1,4 +1,4 @@
-# CLAUDE.md
+﻿# CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -589,3 +589,8 @@ await start_visualization_server(port=8080)
 - [GitHub Issues](https://github.com/topoteretes/cognee/issues)
 - [Example Notebooks](examples/python/)
 - [Research Paper](https://arxiv.org/abs/2505.24478) - Optimizing knowledge graphs for LLM reasoning
+
+
+## CodeGraph -- Code Navigation
+
+CodeGraph MCP is active in every session (globally wired to this machine). Prefer codegraph_search, codegraph_context, codegraph_callers, and codegraph_impact over spawning Explore agents or multi-file Glob/Grep chains for code exploration. Run codegraph_status to verify the index is current if unsure. Full guidance in ai-factory/AGENTS.md.
